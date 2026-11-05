@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#352a22">
+  <meta name="description" content="prohome — каталог квартир Александры. Смотрите фото, сравнивайте квартиры и связывайтесь напрямую.">
+  <meta property="og:title" content="prohome — квартиры с Александрой">
+  <meta property="og:description" content="Каталог квартир, подбор и запись на просмотр.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://defdefolt8-jpg.github.io/prohome/assets/panorama.webp">
+  <title>prohome — квартиры с Александрой</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="symbols" aria-hidden="true">
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10"/></symbol>
+    <symbol id="icon-down" viewBox="0 0 24 24"><path d="M12 4v15m-5-5 5 5 5-5"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M7.2 3.5H4.5c-.6 0-1 .4-1 1 0 8.8 7.2 16 16 16 .6 0 1-.4 1-1v-2.7c0-.5-.3-.9-.8-1l-4-1c-.4-.1-.8 0-1 .3l-1.3 1.3a13.2 13.2 0 0 1-5.8-5.8l1.3-1.3c.3-.2.4-.6.3-1l-1-4c-.1-.5-.5-.8-1-.8Z"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="icon-telegram" viewBox="0 0 24 24"><path d="m21 4-3 16-6-4-3 3v-5l9-8-11 6-4-2 18-6Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-6 9-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0m0 4a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#catalog">К каталогу</a>
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="prohome, главная">prohome<span></span></a>
+      <nav class="nav" aria-label="Главное меню">
+        <a href="#catalog">Квартиры</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-icon" href="tel:+79186565554" aria-label="Позвонить Александре, 8 918 656 55 54">
+          <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+        </a>
+        <a class="header-icon" href="https://t.me/Aleksandraprohome" aria-label="Александра в Telegram" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#icon-telegram"/></svg>
+        </a>
+        <a class="button header-cta" href="#filters">Подобрать квартиру</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero-photo" aria-hidden="true">
+        <source media="(max-width: 640px)" srcset="assets/panorama-mobile.webp">
+        <img src="assets/panorama.webp" alt="" width="1672" height="941" fetchpriority="high">
+      </picture>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Личный подбор квартир</p>
+          <h1 id="hero-title">Недвижимость<br> с Александрой</h1>
+          <p class="hero-description">Квартиры с фото и ценами. Выберите вариант и запишитесь на просмотр.</p>
+          <a class="hero-link" href="#catalog"><svg aria-hidden="true"><use href="#icon-down"/></svg> Смотреть квартиры</a>
+        </div>
+        <form class="filters" id="filters" aria-label="Поиск квартир">
+          <label>Район
+            <select name="district">
+              <option value="">Любой район</option>
+              <option>Пресненский</option><option>Хамовники</option><option>Сокольники</option><option>Раменки</option>
+            </select>
+          </label>
+          <label>Бюджет
+            <select name="budget">
+              <option value="">Любой бюджет</option>
+              <option value="15000000">До 15 млн ₽</option><option value="20000000">До 20 млн ₽</option><option value="30000000">До 30 млн ₽</option>
+            </select>
+          </label>
+          <label>Комнаты
+            <select name="rooms">
+              <option value="">Любое число</option>
+              <option value="1">1 комната</option><option value="2">2 комнаты</option><option value="3">3 комнаты</option>
+            </select>
+          </label>
+          <button class="button filter-button" type="submit"><svg aria-hidden="true"><use href="#icon-search"/></svg> Найти квартиры</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="catalog-top">
+          <div>
+            <p class="eyebrow"><span></span> Каталог prohome</p>
+            <h2 id="catalog-title" tabindex="-1">Квартиры в подборке</h2>
+          </div>
+          <div class="catalog-meta">
+            <p id="result-count" aria-live="polite"></p>
+            <button type="button" class="reset-link" data-reset hidden>Сбросить фильтры</button>
+          </div>
+        </div>
+        <div class="listing-grid" id="listing-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>По этим параметрам квартир нет</h3>
+          <p>Попробуйте другой район или измените бюджет.</p>
+          <button class="button" type="button" data-reset>Показать все квартиры</button>
+        </div>
+        <p class="demo-note">Объявления, фотографии и цены приведены для демонстрации сайта.</p>
+        <noscript>Включите JavaScript, чтобы пользоваться каталогом.</noscript>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts-layout">
+        <div class="contact-copy">
+          <p class="eyebrow"><span></span> Александра · prohome</p>
+          <h2 id="contacts-title">Давайте обсудим<br>ваш поиск.</h2>
+          <p>Расскажите, какую квартиру ищете, или уточните, как записаться на просмотр.</p>
+        </div>
+        <ul class="contact-list">
+          <li><a href="tel:+79186565554">
+            <span class="contact-icon"><svg aria-hidden="true"><use href="#icon-phone"/></svg></span>
+            <span class="contact-text"><span>Телефон</span><strong>8 918 656-55-54</strong></span>
+            <svg class="contact-arrow" aria-hidden="true"><use href="#icon-up-right"/></svg>
+          </a></li>
+          <li><a href="https://t.me/Aleksandraprohome" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon"><svg aria-hidden="true"><use href="#icon-telegram"/></svg></span>
+            <span class="contact-text"><span>Telegram</span><strong>@Aleksandraprohome</strong></span>
+            <svg class="contact-arrow" aria-hidden="true"><use href="#icon-up-right"/></svg>
+          </a></li>
+          <li><a href="https://www.instagram.com/aleksandra.prohome/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon"><svg aria-hidden="true"><use href="#icon-instagram"/></svg></span>
+            <span class="contact-text"><span>Instagram</span><strong>@aleksandra.prohome</strong></span>
+            <svg class="contact-arrow" aria-hidden="true"><use href="#icon-up-right"/></svg>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top" aria-label="prohome, наверх">prohome<span></span></a>
+      <p>Демонстрационная версия сайта</p>
+      <a class="footer-up" href="#top">Наверх <svg aria-hidden="true"><use href="#icon-up-right"/></svg></a>
+    </div>
+  </footer>
+
+  <dialog class="dialog" id="listing-dialog" aria-labelledby="detail-title">
+    <button class="icon-button close-button" type="button" data-close aria-label="Закрыть карточку"><svg aria-hidden="true"><use href="#icon-close"/></svg></button>
+    <img class="detail-photo" id="detail-photo" alt="">
+    <div class="dialog-content">
+      <p class="eyebrow"><span></span> Пример объявления</p>
+      <h2 id="detail-title"></h2>
+      <p class="detail-location" id="detail-location"></p>
+      <p class="detail-price" id="detail-price"></p>
+      <ul class="detail-facts" id="detail-facts"></ul>
+      <p class="detail-description" id="detail-description"></p>
+      <div class="detail-actions">
+        <button class="button" type="button" id="book-listing">Записаться на просмотр <svg aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+        <button class="button button-outline" type="button" id="share-listing"><svg aria-hidden="true"><use href="#icon-link"/></svg> Скопировать ссылку</button>
+      </div>
+      <p class="share-status" id="share-status" aria-live="polite"></p>
+    </div>
+  </dialog>
+
+  <dialog class="dialog booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+    <button class="icon-button close-button" type="button" data-close aria-label="Закрыть форму"><svg aria-hidden="true"><use href="#icon-close"/></svg></button>
+    <div class="dialog-content">
+      <p class="eyebrow"><span></span> Демо</p>
+      <h2 id="booking-title">Запись на просмотр</h2>
+      <p class="booking-context" id="booking-context"></p>
+      <form id="booking-form" class="booking-form" autocomplete="off">
+        <p>Попробуйте форму с вымышленными данными. Заявка не отправится.</p>
+        <label>Имя<input name="name" placeholder="Например, Анна" required maxlength="80" autocomplete="off"></label>
+        <label>Телефон<input name="phone" placeholder="+7 900 000-00-00" type="tel" required maxlength="30" autocomplete="off"></label>
+        <button class="button" type="submit">Оставить демозаявку</button>
+      </form>
+      <div class="booking-success" id="booking-success" hidden aria-live="polite">
+        <div class="success-icon"><svg aria-hidden="true"><use href="#icon-check"/></svg></div>
+        <h3>Демозаявка оформлена</h3>
+        <button class="button" type="button" data-close>Готово</button>
+      </div>
+      <a class="text-link booking-contact" href="https://t.me/Aleksandraprohome" target="_blank" rel="noopener noreferrer">Написать Александре в Telegram <svg aria-hidden="true"><use href="#icon-up-right"/></svg></a>
+    </div>
+  </dialog>
+</body>
+</html>
